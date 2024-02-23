@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:liveinhotel_ui/components/BlurContainer.dart';
+import 'package:liveinhotel_ui/components/LocMenu.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -113,13 +115,49 @@ class HomePage extends StatelessWidget {
       ),
       ),
 
-     body: Column(
-      children: [
-        Container(
-          height: 150,
-          decoration: BoxDecoration(),
-        ),
-      ],
+     body: ListView(
+       scrollDirection: Axis.vertical,
+       children: [
+         Expanded(
+         child: Column(
+          children: [
+            Container(
+              //height: 280,
+              decoration: BoxDecoration(
+              ),
+              child: Stack(
+                children: [
+                  Image.asset('images/reception.jpg'),
+                  Expanded(child: Container(decoration: BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.4) ),height: 305,),),
+
+                  Center(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 45,),
+                        Text('Why choose regular apartments?', style: GoogleFonts.poppins(color: Colors.white),),
+                        Text('Enjoy all the hotel amenities at the same price', style: GoogleFonts.poppins(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold, fontStyle: FontStyle.italic), textAlign: TextAlign.center,),
+                        SizedBox(height: 10,),
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              BlurContainer(ButtonText: '95%', ButtonText2: 'Occupancy \nrate annually', color: Color.fromRGBO(105, 105, 105, 0.7)),
+                              BlurContainer(ButtonText: '4.9', ButtonText2: 'Average \ncustomer rating', color: Color.fromRGBO(105, 105, 105, 0.7)),
+                              BlurContainer(ButtonText: '1000 +', ButtonText2: 'Bookings \nlast year', color: Color.fromRGBO(105, 105, 105, 0.7)),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ],
+         ),
+       ),
+          ]
      ), 
     );
   }
