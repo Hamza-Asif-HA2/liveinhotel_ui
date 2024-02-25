@@ -18,33 +18,36 @@ class BlurContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10.0),
+      borderRadius: BorderRadius.circular(8.0),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
         child: Container(
-          padding: EdgeInsets.all(5),
-          decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
-          child: Column(
-            children: [
-              Text(
-                ButtonText,
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                  color: Colors.white,
+          width: 120,
+          decoration: BoxDecoration(
+              color: color, borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0,),
+            child: Column(
+              children: [
+                Text(
+                  ButtonText,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              Text(
-                ButtonText2,
-                style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: Colors.white,
+                Text(
+                  ButtonText2,
+                  style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12,
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

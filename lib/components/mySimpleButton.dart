@@ -7,17 +7,18 @@ class MySimpleButton extends StatelessWidget {
   final String ButtonText;
   void Function()? onTap;
   final Color color;
-   MySimpleButton({super.key, required this.ButtonText,required this.color,required this.onTap});
+  final Color TextColor;
+   MySimpleButton({super.key, required this.ButtonText,required this.color,required this.onTap, required this.TextColor});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(15),
-        margin: EdgeInsets.symmetric(horizontal: 25),
-        decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
-        child: Text(ButtonText, style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 20),),
+        padding: EdgeInsets.all(8),
+        margin: EdgeInsets.only(left: 25),
+        decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
+        child: Text(ButtonText, style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 14, color: TextColor),),
       ),
     );
   }
