@@ -48,8 +48,6 @@ class _FilterPopState extends State<FilterPop> {
     '\$90k - \$100k',
   ];
 
-
-
   String currentLoc = 'DownTown Dubai';
   String currentStars = '1 Star';
   String currentHotel = 'Hotel Boulevard';
@@ -94,9 +92,7 @@ class _FilterPopState extends State<FilterPop> {
                               color:
                               Colors.amber,
                               borderRadius:
-                              BorderRadius
-                                  .circular(
-                                  8),
+                              BorderRadius.circular(8),
                             ),
                             child: Padding(
                               padding:
@@ -132,11 +128,10 @@ class _FilterPopState extends State<FilterPop> {
                               onSelectedItemChanged:
                                   (index) {
                                 setState(() {
-                                   currentLoc =
-                                  Locations[
-                                  index];
+                                   currentLoc = Locations[index];
                                 });
                               },
+
                               childDelegate:
                               ListWheelChildBuilderDelegate(
                                 childCount: 6,
@@ -145,8 +140,7 @@ class _FilterPopState extends State<FilterPop> {
                                     index) {
                                   return FilterLocation(
                                     i: index,
-                                    Loc: Locations[
-                                    index],
+                                    Loc: Locations[index],
                                     textColor: currentLoc == Locations[index] ? Colors.white: Colors.white60,
                                   );
                                 },
@@ -202,9 +196,7 @@ class _FilterPopState extends State<FilterPop> {
                               onSelectedItemChanged:
                                   (index) {
                                 setState(() {
-                                  currentStars =
-                                  Locations[
-                                  index];
+                                  currentStars = Stars[index];
                                 });
                               },
                               childDelegate:
@@ -215,8 +207,7 @@ class _FilterPopState extends State<FilterPop> {
                                     index) {
                                   return FilterLocation(
                                     i: index,
-                                    Loc: Stars[
-                                    index],
+                                    Loc: Stars[index],
                                     textColor: currentStars == Stars[index] ? Colors.white: Colors.white60,
                                   );
                                 },
@@ -272,9 +263,7 @@ class _FilterPopState extends State<FilterPop> {
                               onSelectedItemChanged:
                                   (index) {
                                 setState(() {
-                                  currentHotel =
-                                  Hotels[
-                                  index];
+                                  currentHotel = Hotels[index];
                                 });
                               },
                               childDelegate:
@@ -285,8 +274,7 @@ class _FilterPopState extends State<FilterPop> {
                                     index) {
                                   return FilterLocation(
                                     i: index,
-                                    Loc: Hotels[
-                                    index],
+                                    Loc: Hotels[index],
                                     textColor: currentHotel == Hotels[index] ? Colors.white: Colors.white60,
                                   );
                                 },
@@ -343,9 +331,7 @@ class _FilterPopState extends State<FilterPop> {
                               onSelectedItemChanged:
                                   (index) {
                                 setState(() {
-                                  currentPrice =
-                                  priceRange[
-                                  index];
+                                  currentPrice = priceRange[index];
                                 });
                               },
                               childDelegate:
@@ -356,8 +342,7 @@ class _FilterPopState extends State<FilterPop> {
                                     index) {
                                   return FilterLocation(
                                     i: index,
-                                    Loc: priceRange[
-                                    index],
+                                    Loc: priceRange[index],
                                     textColor: currentPrice == priceRange[index] ? Colors.white: Colors.white60,
                                   );
                                 },
@@ -371,6 +356,38 @@ class _FilterPopState extends State<FilterPop> {
                     ),
                   ),
                   actions: <Widget>[
+                    Container(
+                      width: 125,
+                      height: 42,
+                      decoration:
+                      BoxDecoration(
+                        color:
+                        Colors.amber,
+                        borderRadius:
+                        BorderRadius.circular(8),
+                      ),
+                      child: Padding(
+                        padding:
+                        const EdgeInsets
+                            .all(
+                            12.0),
+                        child: Text(
+                          'Search',
+                          style:
+                          GoogleFonts
+                              .poppins(
+                            fontWeight:
+                            FontWeight
+                                .bold,
+                            fontSize: 14,
+                            color: Colors
+                                .white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 40,),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context)

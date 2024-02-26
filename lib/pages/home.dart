@@ -14,6 +14,8 @@ import 'package:liveinhotel_ui/components/MyMenuDrawer.dart';
 import 'package:liveinhotel_ui/components/TopHotels.dart';
 import 'package:liveinhotel_ui/components/mySimpleButton.dart';
 
+import '../components/FullDetailHotel.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({super.key});
 
@@ -22,7 +24,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                               style: GoogleFonts.poppins(color: Colors.white),
                             ),
                             Text(
-                            'Enjoy all the hotel amenities at the same price',
+                              'Enjoy all the hotel amenities at the same price',
                               style: GoogleFonts.poppins(
                                   color: Colors.white,
                                   fontSize: 14,
@@ -141,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                           fontStyle: FontStyle.italic,
                                         ),
                                       ),
-                                     FilterPop(),
+                                      FilterPop(),
                                     ],
                                   ),
                                 ),
@@ -192,12 +193,36 @@ class _HomePageState extends State<HomePage> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    TopHotels(
-                        image: 'images/hotel2.jpg',
-                        HotelName: 'Hotel Boulevard, Autograph',
-                        Stars: 4,
-                        Location: 'DownTown Dubai',
-                        Rent: 2000000),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FullDetailHotel(
+                                image1: 'images/hotel2.jpg',
+                                image2: 'images/hotel1.jpg',
+                                image3: 'images/room2.jpg',
+                                image4: 'images/reception.jpg',
+                                map: 'images/Map.png',
+                                HotelName: 'Hotel Boulevard, Autograph',
+                                description: 'Hotel Boulevard, Autograph Collection in Dubai offers centrally located rooms with free WiFi and parking. Amenities include a garden, terrace, and restaurant, with services like concierge and currency exchange available. Rooms feature seating areas, flat-screen TVs, and private bathrooms with free toiletries. The hotel serves a continental breakfast and has multilingual staff at the reception.',
+                                Stars: 3,
+                                Location: 'DownTown Dubai',
+                                Rent: 2000000,
+                                bedRooms: 2,
+                                bathRooms: 3,
+                                Guests: 3,
+                                propertySize: 1534,
+                              ),
+                            ));
+                      },
+                      child: TopHotels(
+                          image: 'images/hotel2.jpg',
+                          HotelName: 'Hotel Boulevard, Autograph',
+                          Stars: 4,
+                          Location: 'DownTown Dubai',
+                          Rent: 2000000),
+                    ),
                     TopHotels(
                         image: 'images/room2.jpg',
                         HotelName: 'Shangri-La Dubai',
